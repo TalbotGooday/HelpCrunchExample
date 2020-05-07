@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.gapps.example"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //Multidex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //HelpCrunch
+    implementation('com.helpcrunch:sdk:2.0.5')
+
+    //AndroidX
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.annotation:annotation:1.1.0"
+    implementation "androidx.core:core-ktx:1.2.0"
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    //Room
+    implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor "androidx.room:room-compiler:2.2.5"
+
+    //SquareUp
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.2.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Volley
+    implementation 'com.android.volley:volley:1.1.1'
+
+    //Google
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-analytics:17.0.0'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:17.4.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.6'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    //Instabug
+    implementation 'com.instabug.library:instabug:9.0.3'
+
+    //Other
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'com.wdullaer:materialdatetimepicker:4.0.1'
+    implementation 'com.sunmi:sunmiui:1.1.27'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.0.9'
+    implementation 'com.itextpdf:itext-pdfa:5.5.10'
+    implementation 'com.itextpdf:itextg:5.5.9'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.13.2'
+    implementation "com.leinardi.android:speed-dial:2.0.1"
+//    implementation 'com.facebook.android:account-kit-sdk:5.4.0'
+    implementation 'org.jsoup:jsoup:1.12.1'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'me.abhinay.input:currency-edittext:1.1'
+    implementation 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
+
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+    implementation 'com.github.joielechong:countrycodepicker:2.4.1'
+    implementation 'me.dm7.barcodescanner:zbar:1.9.13'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+    implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
+
+    //Tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+}
