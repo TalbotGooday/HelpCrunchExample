@@ -38,7 +38,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     //HelpCrunch
-    implementation('com.helpcrunch:sdk:2.0.5')
+    implementation 'com.helpcrunch:sdk:3.0.0-s.61-SNAPSHOT'
 
     //AndroidX
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
